@@ -65,6 +65,19 @@
             border-radius: 4px;
         }
 
+        /* Mobile Drawer Scrollbar */
+        .custom-drawer-scroll::-webkit-scrollbar {
+            width: 5px;
+        }
+        .custom-drawer-scroll::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+        }
+        .custom-drawer-scroll::-webkit-scrollbar-thumb {
+            background: #E65100;
+            border-radius: 4px;
+        }
+
         /* Prevent scroll lock when drawer is active */
         body.mobile-menu-open {
             overflow: hidden !important;
@@ -98,7 +111,6 @@
             </a>
 
             <!-- Desktop & Tablet Navigation Links -->
-            <!-- Visible on lg screens (Desktop) & scaled for md screens (Tablet) -->
             <nav class="hidden md:flex items-center gap-3 lg:gap-8 font-semibold text-xs lg:text-sm text-gray-300">
                 <a href="#home" class="hover:text-brandYellow transition-colors py-2 border-b-2 border-transparent hover:border-brandYellow">Home</a>
                 <a href="#about" class="hover:text-brandYellow transition-colors py-2 border-b-2 border-transparent hover:border-brandYellow">About</a>
@@ -123,46 +135,51 @@
             </button>
         </div>
 
-        <!-- Mobile & Tablet Drawer Menu -->
-        <div id="mobileDrawer" class="hidden fixed inset-x-0 top-20 bottom-0 bg-brandDark/98 backdrop-blur-xl z-[100] border-t border-white/10 p-8 flex-col justify-between overflow-y-auto">
-    <nav class="flex flex-col gap-4 font-bold text-xl text-white">
-        <a href="#home" class="mobile-nav-link py-5 px-5 rounded-2xl border-b border-white/10 flex items-center justify-between hover:bg-white/5 active:bg-white/10">
-            <span>Home</span>
-            <i class="fa-solid fa-chevron-right text-sm text-brandYellow"></i>
-        </a>
-        <a href="#about" class="mobile-nav-link py-5 px-5 rounded-2xl border-b border-white/10 flex items-center justify-between hover:bg-white/5 active:bg-white/10">
-            <span>About OMI’s</span>
-            <i class="fa-solid fa-chevron-right text-sm text-brandYellow"></i>
-        </a>
-        <a href="#menu" class="mobile-nav-link py-5 px-5 rounded-2xl border-b border-white/10 flex items-center justify-between hover:bg-white/5 active:bg-white/10">
-            <span>Menu Preview</span>
-            <i class="fa-solid fa-chevron-right text-sm text-brandYellow"></i>
-        </a>
-        <a href="#why-omi" class="mobile-nav-link py-5 px-5 rounded-2xl border-b border-white/10 flex items-center justify-between hover:bg-white/5 active:bg-white/10">
-            <span>Why Choose Us</span>
-            <i class="fa-solid fa-chevron-right text-sm text-brandYellow"></i>
-        </a>
-        <a href="#find-us" class="mobile-nav-link py-5 px-5 rounded-2xl border-b border-white/10 flex items-center justify-between hover:bg-white/5 active:bg-white/10">
-            <span>Find Location</span>
-            <i class="fa-solid fa-chevron-right text-sm text-brandYellow"></i>
-        </a>
-        <a href="#contact" class="mobile-nav-link py-5 px-5 rounded-2xl flex items-center justify-between hover:bg-white/5 active:bg-white/10">
-            <span>Contact Us</span>
-            <i class="fa-solid fa-chevron-right text-sm text-brandYellow"></i>
-        </a>
-    </nav>
+        <!-- UPDATED MOBILE & TABLET DRAWER MENU (Scrollable list with ~4 items visible at once) -->
+        <div id="mobileDrawer" class="hidden fixed inset-x-0 top-20 bottom-0 bg-brandDark/98 backdrop-blur-xl z-[100] border-t border-white/10 p-6 flex-col justify-between">
+            
+            <!-- Scrollable List Container capped at 4 items (~320px height) -->
+            <div class="max-h-[320px] overflow-y-auto pr-1 custom-drawer-scroll">
+                <nav class="flex flex-col gap-2 font-bold text-lg text-white">
+                    <a href="#home" class="mobile-nav-link py-3.5 px-4 rounded-xl border-b border-white/10 flex items-center justify-between hover:bg-white/5 active:bg-white/10">
+                        <span>Home</span>
+                        <i class="fa-solid fa-chevron-right text-xs text-brandYellow"></i>
+                    </a>
+                    <a href="#about" class="mobile-nav-link py-3.5 px-4 rounded-xl border-b border-white/10 flex items-center justify-between hover:bg-white/5 active:bg-white/10">
+                        <span>About OMI’s</span>
+                        <i class="fa-solid fa-chevron-right text-xs text-brandYellow"></i>
+                    </a>
+                    <a href="#menu" class="mobile-nav-link py-3.5 px-4 rounded-xl border-b border-white/10 flex items-center justify-between hover:bg-white/5 active:bg-white/10">
+                        <span>Menu Preview</span>
+                        <i class="fa-solid fa-chevron-right text-xs text-brandYellow"></i>
+                    </a>
+                    <a href="#why-omi" class="mobile-nav-link py-3.5 px-4 rounded-xl border-b border-white/10 flex items-center justify-between hover:bg-white/5 active:bg-white/10">
+                        <span>Why Choose Us</span>
+                        <i class="fa-solid fa-chevron-right text-xs text-brandYellow"></i>
+                    </a>
+                    <a href="#find-us" class="mobile-nav-link py-3.5 px-4 rounded-xl border-b border-white/10 flex items-center justify-between hover:bg-white/5 active:bg-white/10">
+                        <span>Find Location</span>
+                        <i class="fa-solid fa-chevron-right text-xs text-brandYellow"></i>
+                    </a>
+                    <a href="#contact" class="mobile-nav-link py-3.5 px-4 rounded-xl flex items-center justify-between hover:bg-white/5 active:bg-white/10">
+                        <span>Contact Us</span>
+                        <i class="fa-solid fa-chevron-right text-xs text-brandYellow"></i>
+                    </a>
+                </nav>
+            </div>
 
-    <div class="pt-8 border-t border-white/10 flex flex-col gap-4 pb-12">
-        <a href="tel:08692036867" class="mobile-nav-link w-full bg-brandOrange active:bg-brandOrangeHover text-white py-5 rounded-2xl font-extrabold text-center text-xl shadow-lg flex items-center justify-center gap-3">
-            <i class="fa-solid fa-phone"></i>
-            <span>Call 08692036867</span>
-        </a>
-        <a href="https://maps.app.goo.gl/2s8ebXXsrwsgEz3j6" target="_blank" rel="noopener noreferrer" class="mobile-nav-link w-full bg-white/10 text-white py-4 rounded-2xl font-bold text-center text-lg active:bg-white/20 flex items-center justify-center gap-2 border border-white/15">
-            <i class="fa-solid fa-diamond-turn-right text-brandYellow"></i>
-            <span>Get Directions</span>
-        </a>
-    </div>
-</div>
+            <!-- Fixed Bottom Action CTAs -->
+            <div class="pt-6 border-t border-white/10 flex flex-col gap-3 pb-8">
+                <a href="tel:08692036867" class="mobile-nav-link w-full bg-brandOrange active:bg-brandOrangeHover text-white py-4 rounded-xl font-extrabold text-center text-lg shadow-lg flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Call 08692036867</span>
+                </a>
+                <a href="https://maps.app.goo.gl/2s8ebXXsrwsgEz3j6" target="_blank" rel="noopener noreferrer" class="mobile-nav-link w-full bg-white/10 text-white py-3.5 rounded-xl font-bold text-center text-base active:bg-white/20 flex items-center justify-center gap-2 border border-white/15">
+                    <i class="fa-solid fa-diamond-turn-right text-brandYellow"></i>
+                    <span>Get Directions</span>
+                </a>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -267,238 +284,3 @@
                             
                             <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white">
                                 <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1000&q=80" alt="Appetizing Food Served at OMI's" class="w-full h-80 sm:h-96 object-cover">
-                                
-                                <div class="p-6 bg-white border-t border-gray-100">
-                                    <!-- Badge Pills -->
-                                    <div class="flex items-center justify-between text-center gap-2">
-                                        <div class="flex-1 py-2 px-3 bg-brandCream rounded-xl font-bold text-xs sm:text-sm text-brandDark border border-brandOrange/20">
-                                            <i class="fa-solid fa-leaf text-emerald-600 mr-1"></i> Fresh
-                                        </div>
-                                        <div class="flex-1 py-2 px-3 bg-brandCream rounded-xl font-bold text-xs sm:text-sm text-brandDark border border-brandOrange/20">
-                                            <i class="fa-solid fa-pepper-hot text-brandRed mr-1"></i> Flavorful
-                                        </div>
-                                        <div class="flex-1 py-2 px-3 bg-brandCream rounded-xl font-bold text-xs sm:text-sm text-brandDark border border-brandOrange/20">
-                                            <i class="fa-solid fa-location-dot text-brandOrange mr-1"></i> Local
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- About Content Column -->
-                    <div class="lg:col-span-7 order-1 lg:order-2 space-y-6">
-                        <div class="inline-block bg-brandOrange/10 text-brandOrange font-bold text-xs uppercase tracking-widest px-3.5 py-1.5 rounded-lg border border-brandOrange/20">
-                            NEIGHBORHOOD FOOD STALL
-                        </div>
-
-                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brandDark leading-tight">
-                            A Local Spot Made for <br class="hidden sm:block">
-                            <span class="text-brandOrange">Good Food & Good Moments</span>
-                        </h2>
-
-                        <p class="text-gray-700 text-base sm:text-lg leading-relaxed">
-                            <strong class="text-brandDark">OMI’s</strong> is your neighborhood food stall in Ashokvan, Dahisar East, serving delicious food for everyday cravings. Whether you're grabbing a quick bite on your way home or looking for something tasty nearby, OMI’s is here to keep things simple, satisfying, and full of flavor.
-                        </p>
-
-                        <div class="grid sm:grid-cols-2 gap-4 pt-2">
-                            <div class="p-4 rounded-xl bg-white border border-brandOrange/10 shadow-sm flex items-start gap-3">
-                                <div class="w-10 h-10 rounded-lg bg-brandOrange/10 text-brandOrange flex items-center justify-center shrink-0 text-lg">
-                                    <i class="fa-solid fa-shop"></i>
-                                </div>
-                                <div>
-                                    <h3 class="font-bold text-brandDark text-base">Ashokvan Landmark</h3>
-                                    <p class="text-xs text-gray-600 mt-0.5">Shop No. 12, Raj Umang 2, Rawalpada, Dahisar East.</p>
-                                </div>
-                            </div>
-
-                            <div class="p-4 rounded-xl bg-white border border-brandOrange/10 shadow-sm flex items-start gap-3">
-                                <div class="w-10 h-10 rounded-lg bg-brandYellow/20 text-brandDark flex items-center justify-center shrink-0 text-lg">
-                                    <i class="fa-solid fa-heart"></i>
-                                </div>
-                                <div>
-                                    <h3 class="font-bold text-brandDark text-base">Made for Cravings</h3>
-                                    <p class="text-xs text-gray-600 mt-0.5">Relaxed stall setup designed for fast, warm local food.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="pt-4 flex items-center gap-4 border-t border-gray-200">
-                            <a href="tel:08692036867" class="inline-flex items-center gap-2 text-brandOrange font-bold text-base hover:text-brandOrangeHover group">
-                                <span>Have a query? Call 08692036867</span>
-                                <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="menu" class="py-16 sm:py-24 bg-brandDark text-white relative">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <!-- Section Header -->
-                <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
-                    <div class="inline-flex items-center gap-2 bg-white/10 text-brandYellow text-xs font-bold px-3.5 py-1.5 rounded-full border border-white/15">
-                        <i class="fa-solid fa-book-open text-brandOrange"></i>
-                        <span>MENU PREVIEW</span>
-                    </div>
-                    <h2 class="text-3xl sm:text-5xl font-black text-white">
-                        What Are You <span class="text-brandOrange">Craving?</span>
-                    </h2>
-                    <p class="text-gray-400 text-sm sm:text-base">
-                        Here is a preview layout of what you can expect at OMI’s. Call us directly to ask about today's fresh availability and daily specials!
-                    </p>
-                </div>
-
-                <!-- Category Filter Tabs -->
-                <div id="menuTabs" class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10">
-                    <button data-category="all" class="menu-tab-btn active bg-brandOrange text-white px-5 py-2.5 rounded-xl font-bold text-sm tracking-wide transition-all shadow-md">
-                        All
-                    </button>
-                    <button data-category="snacks" class="menu-tab-btn bg-white/10 hover:bg-white/20 text-gray-300 px-5 py-2.5 rounded-xl font-bold text-sm tracking-wide transition-all border border-white/10">
-                        Snacks
-                    </button>
-                    <button data-category="meals" class="menu-tab-btn bg-white/10 hover:bg-white/20 text-gray-300 px-5 py-2.5 rounded-xl font-bold text-sm tracking-wide transition-all border border-white/10">
-                        Meals
-                    </button>
-                    <button data-category="beverages" class="menu-tab-btn bg-white/10 hover:bg-white/20 text-gray-300 px-5 py-2.5 rounded-xl font-bold text-sm tracking-wide transition-all border border-white/10">
-                        Beverages
-                    </button>
-                    <button data-category="specials" class="menu-tab-btn bg-white/10 hover:bg-white/20 text-gray-300 px-5 py-2.5 rounded-xl font-bold text-sm tracking-wide transition-all border border-white/10">
-                        Specials
-                    </button>
-                </div>
-
-                <!-- Menu Cards Grid -->
-                <div id="menuGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    
-                    <!-- Menu Item 1 -->
-                    <div class="menu-card bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-brandOrange/50 transition-all group" data-category="snacks">
-                        <div class="relative h-48 overflow-hidden bg-gray-800">
-                            <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80" alt="Crispy Snacks Placeholder" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-90">
-                            <span class="absolute top-3 right-3 bg-brandDark/80 backdrop-blur-md text-brandYellow font-bold text-xs px-2.5 py-1 rounded-md border border-white/10">
-                                [Menu Preview]
-                            </span>
-                        </div>
-                        <div class="p-6 space-y-3">
-                            <div class="flex items-center justify-between">
-                                <h3 class="font-bold text-xl text-white">Signature Stall Snack</h3>
-                                <span class="text-brandYellow font-extrabold text-lg">₹--</span>
-                            </div>
-                            <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
-                                Delicious, freshly prepared local street-style snack. Made warm to order at our Dahisar stall.
-                            </p>
-                            <div class="pt-2 flex items-center justify-between border-t border-white/10 text-xs text-gray-400">
-                                <span class="text-brandOrange font-semibold"><i class="fa-solid fa-fire text-xs"></i> Freshly Prepared</span>
-                                <span>Category: Snacks</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Menu Item 2 -->
-                    <div class="menu-card bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-brandOrange/50 transition-all group" data-category="meals">
-                        <div class="relative h-48 overflow-hidden bg-gray-800">
-                            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80" alt="Hearty Meal Combo Placeholder" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-90">
-                            <span class="absolute top-3 right-3 bg-brandDark/80 backdrop-blur-md text-brandYellow font-bold text-xs px-2.5 py-1 rounded-md border border-white/10">
-                                [Menu Preview]
-                            </span>
-                        </div>
-                        <div class="p-6 space-y-3">
-                            <div class="flex items-center justify-between">
-                                <h3 class="font-bold text-xl text-white">Satisfying Meal Combo</h3>
-                                <span class="text-brandYellow font-extrabold text-lg">₹--</span>
-                            </div>
-                            <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
-                                A fulfilling combo option designed for lunch or dinner hunger. Generous portions with authentic taste.
-                            </p>
-                            <div class="pt-2 flex items-center justify-between border-t border-white/10 text-xs text-gray-400">
-                                <span class="text-brandOrange font-semibold"><i class="fa-solid fa-utensils text-xs"></i> Everyday Meal</span>
-                                <span>Category: Meals</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Menu Item 3 -->
-                    <div class="menu-card bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-brandOrange/50 transition-all group" data-category="beverages">
-                        <div class="relative h-48 overflow-hidden bg-gray-800">
-                            <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80" alt="Refreshing Drink Placeholder" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-90">
-                            <span class="absolute top-3 right-3 bg-brandDark/80 backdrop-blur-md text-brandYellow font-bold text-xs px-2.5 py-1 rounded-md border border-white/10">
-                                [Menu Preview]
-                            </span>
-                        </div>
-                        <div class="p-6 space-y-3">
-                            <div class="flex items-center justify-between">
-                                <h3 class="font-bold text-xl text-white">Chilled / Hot Beverage</h3>
-                                <span class="text-brandYellow font-extrabold text-lg">₹--</span>
-                            </div>
-                            <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
-                                The perfect refreshment to pair with your food item. Quick and refreshing options available daily.
-                            </p>
-                            <div class="pt-2 flex items-center justify-between border-t border-white/10 text-xs text-gray-400">
-                                <span class="text-brandOrange font-semibold"><i class="fa-solid fa-glass-water text-xs"></i> Refreshing</span>
-                                <span>Category: Beverages</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Menu Item 4 -->
-                    <div class="menu-card bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-brandOrange/50 transition-all group" data-category="specials">
-                        <div class="relative h-48 overflow-hidden bg-gray-800">
-                            <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=600&q=80" alt="OMI's Daily Special Placeholder" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-90">
-                            <span class="absolute top-3 right-3 bg-brandOrange text-white font-bold text-xs px-2.5 py-1 rounded-md shadow">
-                                Today's Special
-                            </span>
-                        </div>
-                        <div class="p-6 space-y-3">
-                            <div class="flex items-center justify-between">
-                                <h3 class="font-bold text-xl text-white">OMI’s Chef Special</h3>
-                                <span class="text-brandYellow font-extrabold text-lg">₹--</span>
-                            </div>
-                            <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
-                                Ask the stall owner about today’s featured dish! Special recipes made with love in Ashokvan.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- JavaScript for Mobile Drawer Toggle -->
-    <script>
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileDrawer = document.getElementById('mobileDrawer');
-        const menuIcon = document.getElementById('menuIcon');
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-
-        function toggleMenu() {
-            const isOpen = !mobileDrawer.classList.contains('hidden');
-            if (isOpen) {
-                mobileDrawer.classList.add('hidden');
-                mobileDrawer.classList.remove('flex');
-                document.body.classList.remove('mobile-menu-open');
-                menuIcon.classList.remove('fa-xmark');
-                menuIcon.classList.add('fa-bars');
-            } else {
-                mobileDrawer.classList.remove('hidden');
-                mobileDrawer.classList.add('flex');
-                document.body.classList.add('mobile-menu-open');
-                menuIcon.classList.remove('fa-bars');
-                menuIcon.classList.add('fa-xmark');
-            }
-        }
-
-        mobileMenuBtn.addEventListener('click', toggleMenu);
-
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (!mobileDrawer.classList.contains('hidden')) {
-                    toggleMenu();
-                }
-            });
-        });
-    </script>
-</body>
-</html>
