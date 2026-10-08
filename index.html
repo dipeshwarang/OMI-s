@@ -96,7 +96,7 @@
 <body class="antialiased text-brandDark bg-brandCream selection:bg-brandOrange selection:text-white pb-16 md:pb-0">
 
     <!-- RESPONSIVE HEADER -->
-    <header id="mainHeader" class="sticky top-0 z-50 bg-brandDark/95 backdrop-blur-md text-white border-b border-white/10 transition-all duration-300">
+    <header id="mainHeader" class="sticky top-0 z-[10000] bg-[#121212] text-white border-b border-white/10 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
             
             <!-- Brand Logo -->
@@ -135,11 +135,11 @@
             </button>
         </div>
 
-        <!-- MOBILE & TABLET DRAWER MENU -->
-        <div id="mobileDrawer" class="hidden fixed inset-x-0 top-20 bottom-0 bg-brandDark/98 backdrop-blur-xl z-[100] border-t border-white/10 p-6 flex-col justify-between">
+        <!-- FIXED FULL-OPAQUE MOBILE DRAWER MENU -->
+        <div id="mobileDrawer" class="hidden fixed inset-0 top-20 bg-[#121212] z-[9999] border-t border-white/10 p-6 flex-col justify-between overflow-y-auto">
             
-            <!-- Scrollable List Container -->
-            <div class="max-h-[320px] overflow-y-auto pr-1 custom-drawer-scroll">
+            <!-- Links Container -->
+            <div class="flex-1 overflow-y-auto pr-1 custom-drawer-scroll">
                 <nav class="flex flex-col gap-2 font-bold text-lg text-white">
                     <a href="#home" class="mobile-nav-link py-3.5 px-4 rounded-xl border-b border-white/10 flex items-center justify-between hover:bg-white/5 active:bg-white/10">
                         <span>Home</span>
@@ -168,8 +168,8 @@
                 </nav>
             </div>
 
-            <!-- Fixed Bottom Action CTAs -->
-            <div class="pt-6 border-t border-white/10 flex flex-col gap-3 pb-8">
+            <!-- Bottom Action CTAs -->
+            <div class="pt-6 border-t border-white/10 flex flex-col gap-3 pb-6 shrink-0 mt-4">
                 <a href="tel:08692036867" class="mobile-nav-link w-full bg-brandOrange active:bg-brandOrangeHover text-white py-4 rounded-xl font-extrabold text-center text-lg shadow-lg flex items-center justify-center gap-3">
                     <i class="fa-solid fa-phone"></i>
                     <span>Call 08692036867</span>
@@ -301,18 +301,15 @@
         const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
         function toggleMenu() {
-          // Check if drawer is currently hidden
           const isHidden = mobileDrawer.classList.contains('hidden');
 
           if (isHidden) {
-            // Open the drawer
             mobileDrawer.classList.remove('hidden');
             mobileDrawer.classList.add('flex');
             document.body.classList.add('mobile-menu-open');
             menuIcon.classList.remove('fa-bars');
             menuIcon.classList.add('fa-xmark');
           } else {
-            // Close the drawer
             mobileDrawer.classList.add('hidden');
             mobileDrawer.classList.remove('flex');
             document.body.classList.remove('mobile-menu-open');
@@ -321,12 +318,10 @@
           }
         }
 
-        // Toggle drawer on hamburger button click
         if (mobileMenuBtn) {
           mobileMenuBtn.addEventListener('click', toggleMenu);
         }
 
-        // Automatically close drawer when a user taps any navigation link
         mobileNavLinks.forEach(link => {
           link.addEventListener('click', () => {
             if (!mobileDrawer.classList.contains('hidden')) {
