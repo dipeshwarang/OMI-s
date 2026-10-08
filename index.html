@@ -95,7 +95,7 @@
 </head>
 <body class="antialiased text-brandDark bg-brandCream selection:bg-brandOrange selection:text-white pb-16 md:pb-0">
 
-    <!-- UPDATED RESPONSIVE HEADER FOR DESKTOP, TABLET, AND MOBILE -->
+    <!-- RESPONSIVE HEADER -->
     <header id="mainHeader" class="sticky top-0 z-50 bg-brandDark/95 backdrop-blur-md text-white border-b border-white/10 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
             
@@ -135,10 +135,10 @@
             </button>
         </div>
 
-        <!-- UPDATED MOBILE & TABLET DRAWER MENU (Scrollable list with ~4 items visible at once) -->
+        <!-- MOBILE & TABLET DRAWER MENU -->
         <div id="mobileDrawer" class="hidden fixed inset-x-0 top-20 bottom-0 bg-brandDark/98 backdrop-blur-xl z-[100] border-t border-white/10 p-6 flex-col justify-between">
             
-            <!-- Scrollable List Container capped at 4 items (~320px height) -->
+            <!-- Scrollable List Container -->
             <div class="max-h-[320px] overflow-y-auto pr-1 custom-drawer-scroll">
                 <nav class="flex flex-col gap-2 font-bold text-lg text-white">
                     <a href="#home" class="mobile-nav-link py-3.5 px-4 rounded-xl border-b border-white/10 flex items-center justify-between hover:bg-white/5 active:bg-white/10">
@@ -183,8 +183,8 @@
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section id="home" class="relative bg-brandDark text-white overflow-hidden py-16 lg:py-24 border-b border-brandOrange/20">
-            <!-- Background Food Overlay -->
             <div class="absolute inset-0 z-0 opacity-20 bg-cover bg-center mix-blend-luminosity" style="background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1600&q=80');"></div>
             <div class="absolute inset-0 bg-gradient-to-r from-brandDark via-brandDark/90 to-brandDark/60 z-0"></div>
             <div class="absolute -top-24 -right-24 w-96 h-96 bg-brandOrange/20 rounded-full blur-3xl pointer-events-none"></div>
@@ -194,26 +194,21 @@
                     
                     <!-- Hero Text Content -->
                     <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                        
-                        <!-- Badge Tag -->
                         <div class="inline-flex items-center gap-2 bg-brandOrange/20 border border-brandOrange/40 text-brandYellow px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase shadow-inner">
                             <i class="fa-solid fa-utensils text-brandOrange"></i>
                             <span>YOUR LOCAL FOOD SPOT IN DAHISAR EAST</span>
                         </div>
 
-                        <!-- Main Heading -->
                         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-white">
                             Good Food. <br class="hidden sm:block">
                             Great Taste. <br class="hidden sm:block">
                             <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandYellow via-brandOrange to-brandRed">Right Around the Corner.</span>
                         </h1>
 
-                        <!-- Supporting Text -->
                         <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
                             Welcome to <strong class="text-white font-semibold">OMI’s</strong> — a local food stall serving delicious food in the heart of Ashokvan, Dahisar East. Fresh, warm, and prepared for your everyday cravings.
                         </p>
 
-                        <!-- CTA Action Buttons -->
                         <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                             <a href="#menu" class="w-full sm:w-auto bg-brandOrange hover:bg-brandOrangeHover text-white px-8 py-4 rounded-xl font-bold text-base shadow-xl shadow-brandOrange/25 hover:shadow-2xl hover:scale-105 transition-all flex items-center justify-center gap-3">
                                 <span>Explore Menu</span>
@@ -225,14 +220,12 @@
                             </a>
                         </div>
 
-                        <!-- Quick Address Highlight -->
                         <div class="pt-4 flex items-center justify-center lg:justify-start gap-2 text-sm text-gray-400 font-medium">
                             <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
                             <span>📍 Dahisar East, Mumbai</span>
                             <span class="text-gray-600">•</span>
                             <span class="text-gray-300">Open for local walk-ins</span>
                         </div>
-
                     </div>
 
                     <!-- Hero Visual Media -->
@@ -254,7 +247,6 @@
                                 </div>
                             </div>
 
-                            <!-- Floating Badge -->
                             <div class="absolute -bottom-6 -left-6 bg-brandDark border border-white/15 p-4 rounded-2xl shadow-xl hidden sm:flex items-center gap-3 max-w-xs">
                                 <div class="w-12 h-12 rounded-xl bg-brandOrange/20 text-brandOrange flex items-center justify-center text-xl shrink-0">
                                     <i class="fa-solid fa-fire"></i>
@@ -264,7 +256,6 @@
                                     <p class="text-white font-bold text-sm">Quality Food in Ashokvan</p>
                                 </div>
                             </div>
-
                         </div>
                     </div>
 
@@ -272,11 +263,11 @@
             </div>
         </section>
 
+        <!-- About Section -->
         <section id="about" class="py-16 sm:py-24 bg-brandCream relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid lg:grid-cols-12 gap-12 items-center">
                     
-                    <!-- About Image Column -->
                     <div class="lg:col-span-5 order-2 lg:order-1">
                         <div class="relative">
                             <div class="absolute -top-4 -left-4 w-24 h-24 bg-brandOrange/10 rounded-2xl -z-10"></div>
@@ -284,3 +275,66 @@
                             
                             <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white">
                                 <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1000&q=80" alt="Appetizing Food Served at OMI's" class="w-full h-80 sm:h-96 object-cover">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 order-1 lg:order-2 space-y-4">
+                        <span class="text-brandOrange font-bold text-sm tracking-widest uppercase">About OMI’s</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-brandDark">Serving Good Food with Love in Dahisar East</h2>
+                        <p class="text-gray-700 leading-relaxed">
+                            At OMI’s, we focus on delivering delicious taste and quick service for every customer visiting our local food stall in Ashokvan. Stop by for a freshly prepared meal right in your neighborhood.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Mobile Drawer Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileDrawer = document.getElementById('mobileDrawer');
+        const menuIcon = document.getElementById('menuIcon');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function toggleMenu() {
+          // Check if drawer is currently hidden
+          const isHidden = mobileDrawer.classList.contains('hidden');
+
+          if (isHidden) {
+            // Open the drawer
+            mobileDrawer.classList.remove('hidden');
+            mobileDrawer.classList.add('flex');
+            document.body.classList.add('mobile-menu-open');
+            menuIcon.classList.remove('fa-bars');
+            menuIcon.classList.add('fa-xmark');
+          } else {
+            // Close the drawer
+            mobileDrawer.classList.add('hidden');
+            mobileDrawer.classList.remove('flex');
+            document.body.classList.remove('mobile-menu-open');
+            menuIcon.classList.remove('fa-xmark');
+            menuIcon.classList.add('fa-bars');
+          }
+        }
+
+        // Toggle drawer on hamburger button click
+        if (mobileMenuBtn) {
+          mobileMenuBtn.addEventListener('click', toggleMenu);
+        }
+
+        // Automatically close drawer when a user taps any navigation link
+        mobileNavLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            if (!mobileDrawer.classList.contains('hidden')) {
+              toggleMenu();
+            }
+          });
+        });
+      });
+    </script>
+</body>
+</html>
